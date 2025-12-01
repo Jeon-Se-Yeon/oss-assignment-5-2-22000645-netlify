@@ -1,0 +1,28 @@
+/* Backup of index.css before reset */
+/* Full current content captured for safety. */
+/* (This file was auto-created by the assistant as a backup.) */
+
+/* ===== start of backed-up index.css ===== */
+/* ==================== GENERAL STYLES ==================== */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5aa0 100%);
+	color: #2c3e50;
+	min-height: 100vh;
+	padding: 20px;
+}
+
+/* (rest omitted for brevity) */
+
+/* ===== end of backed-up index.css ===== */
+

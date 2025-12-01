@@ -1,0 +1,268 @@
+/* src/index.css 또는 App.css */
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f9; /* Light background */
+    color: #333;
+}
+
+/* Buttons Styling */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#btnStu {
+    background-color: #ff7f27;
+    height: 50px;
+    color: white;
+}
+
+#btnStu:hover {
+    background-color: #c46222;
+}
+
+#btn-modal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 14px;
+    height: 50px;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #4cd2e2;
+    color: white;
+    box-shadow: 0 6px 18px rgba(76, 210, 226, 0.18);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#btn-modal:hover {
+    box-shadow: 0 10px 24px rgba(76, 210, 226, 0.26);
+}
+
+/* Content Area */
+#contents {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffe5d3;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container for product items */
+#contents > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Individual Product Item */
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #fcfcfc;
+    border-radius: 4px;
+    transition: background-color 0.1s;
+}
+
+.product-item:last-child {
+    border-bottom: none;
+}
+
+.product-item:hover {
+    background-color: #f9f9f9;
+}
+
+.content {
+    /* Product info text */
+    flex-grow: 1;
+    font-size: 20px;
+    color: #555;
+    padding: 0;
+}
+
+/* Modify/Delete Buttons */
+.product-actions button {
+    margin-left: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.product-actions button:nth-of-type(2) {
+    /* Delete button (red) */
+    background-color: #ff3535;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+}
+
+.button-like-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0px 14px;
+    height: 40px;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: #e49dfd; /* Yellow */
+    color: #333;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button-like-link:hover {
+    background-color: #9c6cad;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly lighter overlay */
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Ensure it's above other content */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; /* Remove padding from modal overlay */
+}
+
+.modal-content {
+    max-width: 450px; /* Slightly adjusted max-width */
+    width: 90%; /* Responsive width */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncier transition */
+    transform: scale(0.7);
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal.show .modal-content {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 0 0 15px 0;
+    margin-bottom: 15px;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-close {
+    color: #999;
+    font-size: 32px;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 5px; /* Increase click area */
+    line-height: 1; /* Center the 'x' */
+    transition: color 0.2s;
+}
+
+.btn-close:hover {
+    color: #333;
+}
+
+.modal-body {
+    padding: 10px 0;
+}
+
+.modal-body .modal-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding/border in element's total width */
+    font-size: 16px;
+}
+
+.modal-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Modal Footer Buttons */
+.modal-footer button {
+    padding: 8px 15px;
+    margin: 0;
+}
+
+.modal-footer button:nth-of-type(1) { /* Close Button */
+    background-color: #6c757d; /* Secondary gray */
+    color: white;
+}
+
+.modal-footer button:nth-of-type(1):hover {
+    background-color: #5a6268;
+}
+
+#btn-Add { /* Add data Button */
+    background-color: #4cd2e2; /* Primary blue */
+    color: white;
+}
+
+#btn-Add:hover { /* Add data Button */
+    background-color: #379aa5; /* Primary blue */
+}
+
+#btn-Save {
+     background-color: #4cd2e2; /* Green for Save */
+     color: white;
+}
+
+#btn-Save:hover {
+    background-color: #379aa5;
+}
+
+/* Utility */
+input[type="text"]::placeholder {
+    color: #aaa;
+}

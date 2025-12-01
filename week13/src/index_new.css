@@ -1,0 +1,608 @@
+/* ==================== GENERAL STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5aa0 100%);
+    color: #2c3e50;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==================== ROOT & MAIN CONTAINER ==================== */
+#root {
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==================== HEADER & NAVIGATION ==================== */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+nav a,
+nav button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+}
+
+/* ==================== BUTTON STYLES ==================== */
+button,
+.btn {
+    text-decoration: none;
+    padding: 12px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:active,
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* Primary Button - Orange */
+#btnStu {
+    background: linear-gradient(135deg, #ff7f27 0%, #e67e22 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 127, 39, 0.2);
+}
+
+#btnStu:hover {
+    background: linear-gradient(135deg, #ff9345 0%, #ff7f27 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 127, 39, 0.4);
+}
+
+/* Secondary Button - Cyan */
+#btn-modal {
+    background: linear-gradient(135deg, #4cd2e2 0%, #379aa5 100%);
+    color: white;
+    margin-left: 0;
+    box-shadow: 0 4px 12px rgba(76, 210, 226, 0.2);
+}
+
+#btn-modal:hover {
+    background: linear-gradient(135deg, #5ae6f7 0%, #4cd2e2 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(76, 210, 226, 0.4);
+}
+
+/* Add Button */
+#btn-Add {
+    background: linear-gradient(135deg, #4cd2e2 0%, #379aa5 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(76, 210, 226, 0.2);
+}
+
+#btn-Add:hover {
+    background: linear-gradient(135deg, #5ae6f7 0%, #4cd2e2 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(76, 210, 226, 0.4);
+}
+
+/* Save Button */
+#btn-Save {
+    background: linear-gradient(135deg, #4cd2e2 0%, #379aa5 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(76, 210, 226, 0.2);
+}
+
+#btn-Save:hover {
+    background: linear-gradient(135deg, #5ae6f7 0%, #4cd2e2 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(76, 210, 226, 0.4);
+}
+
+/* Cancel/Close Button */
+.btn-close,
+.btn-cancel {
+    background-color: #6c757d;
+    color: white;
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.2);
+}
+
+.btn-close:hover,
+.btn-cancel:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(90, 98, 104, 0.4);
+}
+
+/* ==================== CONTENT AREA ==================== */
+#contents {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin-top: 30px;
+    border-top: 4px solid #667eea;
+}
+
+#contents h2,
+#contents h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+#contents > div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ==================== PRODUCT LIST STYLES ==================== */
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-left: 4px solid #667eea;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.product-item:hover {
+    background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
+    transform: translateX(5px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+}
+
+.product-item:nth-child(odd) {
+    border-left-color: #764ba2;
+}
+
+.product-item:nth-child(even) {
+    border-left-color: #4cd2e2;
+}
+
+.product-content {
+    flex-grow: 1;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.product-details {
+    font-size: 13px;
+    color: #7f8c8d;
+    display: flex;
+    gap: 15px;
+}
+
+.product-detail-item {
+    display: flex;
+    gap: 5px;
+}
+
+.product-detail-label {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.product-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.product-actions button {
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modify Button - Purple */
+.product-actions button:nth-of-type(1) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.product-actions button:nth-of-type(1):hover {
+    background: linear-gradient(135deg, #7a8ef5 0%, #88a0d9 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Delete Button - Red */
+.product-actions button:nth-of-type(2) {
+    background: linear-gradient(135deg, #ff3535 0%, #e63946 100%);
+    color: white;
+}
+
+.product-actions button:nth-of-type(2):hover {
+    background: linear-gradient(135deg, #ff5555 0%, #ff3535 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 53, 53, 0.3);
+}
+
+/* ==================== MODAL STYLES ==================== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    max-width: 450px;
+    width: 90%;
+    opacity: 0;
+    transform: scale(0.7) translateY(-30px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal.show .modal-content {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.btn-close:hover {
+    background-color: #f0f0f0;
+    color: #333;
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    background-color: #f9fafb;
+    transition: all 0.3s ease;
+}
+
+.modal-input::placeholder {
+    color: #999;
+    font-weight: 500;
+}
+
+.modal-input:focus {
+    outline: none;
+    border-color: #667eea;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.modal-footer button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.button-like-link {
+    text-decoration: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.button-like-link:hover {
+    background: linear-gradient(135deg, #7a8ef5 0%, #88a0d9 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.empty-state-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.empty-state-text {
+    color: #7f8c8d;
+    margin-bottom: 25px;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+
+    header {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    #contents {
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .product-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .product-content {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .product-actions {
+        width: 100%;
+    }
+
+    .product-actions button {
+        flex: 1;
+    }
+
+    .modal-content {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a,
+    nav button {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    .product-item {
+        padding: 15px;
+    }
+
+    .product-name {
+        font-size: 16px;
+    }
+
+    .product-details {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .product-actions {
+        gap: 6px;
+    }
+
+    .product-actions button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.animate-fade {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.animate-slide {
+    animation: slideInUp 0.5s ease-out;
+}
+
+/* ==================== SCROLLBAR ==================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #7a8ef5 0%, #88a0d9 100%);
+}

@@ -123,13 +123,13 @@ button {
     font-weight: 700;
     text-decoration: none;
     border-radius: 8px;
-    background-color: #e49dfd; /* Yellow */
+    background-color: #ff3535; /* Yellow */
     color: #333;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .button-like-link:hover {
-    background-color: #9c6cad;
+    background-color: #c12929;
 }
 
 .modal {

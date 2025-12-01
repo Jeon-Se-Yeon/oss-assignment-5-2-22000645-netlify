@@ -104,16 +104,18 @@ button {
     font-size: 14px;
 }
 
-.product-actions button:nth-of-type(2) {
-    /* Delete button (red) */
-    background-color: #ff3535;
-    color: white;
-    padding: 10px 15px;
+.delete-btn { /* Delete button */
+    height: 40px;
+    background-color: #ff3535; /* Red */
     border-radius: 8px;
-    border: none;
+    color: white;
 }
 
-.button-like-link {
+.delete-btn:hover {
+    background-color: #c12929;
+}
+
+.modify-btn {
     display: inline-flex;
     align-items: center;
     padding: 0px 14px;
@@ -123,13 +125,13 @@ button {
     font-weight: 700;
     text-decoration: none;
     border-radius: 8px;
-    background-color: #ff3535; /* Yellow */
+    background-color: #e49dfd;
     color: #333;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.button-like-link:hover {
-    background-color: #c12929;
+.modify-btn:hover {
+    background-color: #9c6cad;
 }
 
 .modal {

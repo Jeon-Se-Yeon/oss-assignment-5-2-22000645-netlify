@@ -16,9 +16,9 @@ function ProductItem({ product, onEdit, onDelete }) { // onEdit은 더 이상 �
             </div>
             <div className="product-actions">
                 {/* 수정 버튼을 /edit/:productId로 이동하는 Link로 변경 */}
-                <Link to={`/edit/${product.id}`} className="button-like-link">Modify</Link>
+                <Link to={`/edit/${product.id}`} className="modify-btn">Modify</Link>
                 {/* 기존 삭제 버튼은 유지 */}
-                <button className="button-like-link" onClick={() => onDelete(product.id)}>Delete</button>
+                <button className="delete-btn" onClick={() => onDelete(product.id)}>Delete</button>
             </div>
         </div>
     );
